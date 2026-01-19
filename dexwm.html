@@ -433,7 +433,7 @@
       
       <h3>Evaluating Cross-embodiment World Model Learning</h3>
       <p>
-        We systematically evaluate how the number of training embodiments influences generalization to unseen embodiments. For each target hand, we hold it out and train on <em>x</em> other hands, enumerating all <em>C(N,x)</em> subsets from <em>N=6</em> total hands. The mean squared error (MSE) on the unseen hand serves as the generalization metric. In addition, the case <em>x=6</em> corresponds to training on all hands, including the target, and provides a reference for the upper bound of cross-embodiment learning in the current data regime.
+        We systematically evaluate how the number of training embodiments influences generalization to unseen embodiments. For each target hand, we hold it out and train on <em>x</em> other hands, enumerating all <em>C(N,x)</em> subsets from <em>N=6</em> total hands. In addition, the case <em>x=6</em> corresponds to training on all hands, including the target, and provides a reference for the upper bound of cross-embodiment learning in the current data regime.
       </p>
       
       <div class="figure-container">
@@ -444,9 +444,9 @@
       
       <h4>Key Observations</h4>
       <ul>
-        <li><strong>Embodiment scaling law:</strong> Prediction error decreases as more embodiments are included, and variance across subsets shrinks, indicating more stable models with broader embodiment diversity.</li>
-        <li><strong>Zero-shot strength at <em>x=5</em>:</strong> With five training embodiments (no target data), performance often approaches or surpasses training directly on the target hand. This shows that diverse cross-embodiment data can substitute for target-specific data when deploying to a new hand. This opens up the possibility of building cross-embodiment generalist world models that can broadly zero-shot transfer to novel ones via large-scale cross-embodiment training.</li>
-        <li><strong>Benefit of co-training at <em>x=6*</em>:</strong> Even when target data is available, adding the other embodiments yields further gains over target-only training. Our proposed state and action representations unify data from heterogeneous embodiments and make such co-training possible.</li>
+        <li><strong>Embodiment scaling law:</strong> More training embodiments -> better generalization. </li>
+        <li><strong>Zero-shot strength at <em>x=5</em>:</strong> Performance can surpass direct training on the target embodiment <b>without ever seeing it</b>.        </li>
+        <li><strong>Benefit of co-training at <em>x=6*</em>:</strong> Training on all embodiments <b>outperforms</b> direct training on the target embodiment. </li>
       </ul>
       
       <h3>Co-Training Recipe</h3>
