@@ -236,6 +236,41 @@
       color: #f09228;
     }
     
+    .figure-wrap {
+      float: right;
+      width: 45%;
+      margin: 20px 20px 20px 20px;
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .figure-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .figure-wrap a {
+      display: block;
+      margin-top: 10px;
+      color: #1772d0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    
+    .figure-wrap a:hover {
+      color: #f09228;
+    }
+    
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
     .pdf-container a {
       display: inline-block;
       margin-top: 10px;
@@ -348,6 +383,12 @@
       .video-grid {
         grid-template-columns: 1fr;
       }
+      
+      .figure-wrap {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+      }
     }
   </style>
 </head>
@@ -388,21 +429,22 @@
       </div>
     </div>
 
-    <!-- Teaser Video -->
-    <section id="teaser">
-      <div class="video-container">
-        <video src="static/dexwm/videos/teaser.mp4" controls autoplay muted playsinline loop poster="">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </section>
-
     <!-- Abstract -->
     <section id="abstract">
       <h2>Abstract</h2>
       <p>
         Cross-embodiment learning seeks to build generalist robots that operate across diverse morphologies, but differences in action spaces and kinematics hinder data sharing and policy transfer. This raises a central question: Is there any invariance that allows actions to transfer across embodiments? We conjecture that environment dynamics are embodiment-invariant, and that world models capturing these dynamics can provide a unified interface across embodiments. To learn such a unified world model, the crucial step is to design state and action representations that abstract away embodiment-specific details while preserving control relevance. To this end, we represent different embodiments (e.g., human hands and robot hands) as sets of 3D particles and define actions as particle displacements, creating a shared representation for heterogeneous data and control problems. A graph-based world model is then trained on exploration data from diverse simulated robot hands and real human hands, and integrated with model-based planning for deployment on novel hardware. Experiments on rigid and deformable manipulation tasks reveal three findings: (i) scaling to more training embodiments improves generalization to unseen ones, (ii) co-training on both simulated and real data outperforms training on either alone, and (iii) the learned models enable effective control on robots with varied degrees of freedom. These results establish world models as a promising interface for cross-embodiment dexterous manipulation.
       </p>
+    </section>
+
+    <!-- Teaser Video -->
+    <section id="teaser">
+      <h2>Video</h2>
+      <div class="video-container">
+        <video src="static/dexwm/videos/teaser.mp4" controls autoplay muted playsinline loop poster="">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </section>
 
     <!-- Method -->
@@ -450,14 +492,15 @@
       </ul>
       
       <h3>Co-Training Recipe</h3>
-      <p>
-        We co-train a single world model on mixed simulated robot interactions and real human demonstrations, and sweep the amount of simulation data relative to a fixed human dataset. Evaluated on held-out human interactions (CD/EMD error), simulation-only performs worst, human-only is a strong baseline, and a balanced ~1:1 sim-to-human mix yields the best accuracy—suggesting simulation acts as a regularizer rather than a replacement for real data. 
-      </p>
-      
-      <div class="figure-container">
-        <img src="static/dexwm/images/recipe.jpg" alt="Co-Training Recipe: CD+EMD Error comparison for Object Pushing and Plasticine Reshaping tasks with different simulation-to-real data ratios" style="max-width: 700px;">
-        <br>
-        <a href="static/dexwm/images/recipe.jpg" target="_blank">View full-size image</a>
+      <div class="clearfix">
+        <div class="figure-wrap">
+          <img src="static/dexwm/images/recipe.png" alt="Co-Training Recipe: CD+EMD Error comparison for Object Pushing and Plasticine Reshaping tasks with different simulation-to-real data ratios">
+          <a href="static/dexwm/images/recipe.png" target="_blank">View full-size image</a>
+        </div>
+        <p>
+          <br>
+          We co-train a single world model on mixed simulated robot interactions and real human demonstrations, and sweep the amount of simulation data relative to a fixed human dataset. Evaluated on held-out human interactions (CD/EMD error), simulation-only performs worst, human-only is a strong baseline, and <b> a balanced ~1:1 sim-to-human mix </b> yields the best accuracy —suggesting simulation acts as a regularizer rather than a replacement for real data. 
+        </p>
       </div>
     
       
