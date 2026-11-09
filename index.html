@@ -81,13 +81,44 @@
             <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
 
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="images/research/ved.jpg" width="160" alt="Visual embodiment dependence under different visible robot configurations">
+                  </td>
+                  <td style="padding:20px;width:75%;vertical-align:middle">
+                    <papertitle>
+                      <a href="https://arxiv.org/pdf/2609.16815"><strong>Rethinking Visual Embodiment Dependence in Visuomotor Policies</strong></a>
+                    </papertitle>
+                    <br>
+                    <a href="https://tonyfang.net/">Hongjie Fang</a>,
+                    <a href="https://github.com/whistlingIsTheOcean">Yuxuan Lu</a>,
+                    <a href="https://scholar.google.com/citations?user=bK1fWXcAAAAJ">Chenxi Wang</a>,
+                    <a href="https://github.com/1JI0O">Haoxiang Qin</a>,
+                    <a href="https://www.linkedin.com/in/shiruntang/">Shirun Tang</a>,
+                    <strong>Zihao He</strong>,
+                    <a href="https://github.com/Xiashangning/">Shangning Xia</a>,
+                    <a href="mailto:jjchen20@sjtu.edu.cn">Jingjing Chen</a>,
+                    <a href="mailto:wanxi.liu@flexiv.com">Wanxi Liu</a>,
+                    <a href="mailto:shiquan.wang@flexiv.com">Shiquan Wang†</a>,
+                    <a href="https://www.mvig.org/">Cewu Lu†</a>
+                    <br>
+                    <em>arXiv</em>, 2026
+                    <br>
+                    <a href="https://arxiv.org/pdf/2609.16815">paper</a> / <a href="https://tonyfang.net/ved/">project page</a>
+                    <p></p>
+                    <p>
+                      We identify visual embodiment dependence (VED) as an action prediction shortcut in visuomotor policies and structure it through embodiment canonicalization in 3D point clouds. A shared canonical end-effector representation (CER) enables effective human-to-robot transfer, and configuration-decorrelation augmentation improves robustness to unseen robot configurations.
+                    </p>
+                  </td>
+                </tr>
+
                 <tr bgcolor="#ffffd0">
                   <td style="padding:20px;width:25%;vertical-align:middle">
                     <img src="images/research/lag-fusion.png" width="160" alt="Latency-aware guidance fusion framework for asynchronous multimodal diffusion policy composition">
                   </td>
                   <td style="padding:20px;width:75%;vertical-align:middle">
                     <papertitle>
-                      <a href="https://arxiv.org/pdf/2607.17257"><strong>Asynchronous Multimodal Diffusion Policy Composition via Latency-Aware Guidance Fusion</strong></a>
+                      <a href="https://arxiv.org/pdf/2607.17257"><strong>MATE: Asynchronous Multi-Rate Diffusion Policy Composition</strong></a>
                     </papertitle>
                     <br>
                     <strong>Zihao He*</strong>,
@@ -101,7 +132,7 @@
                     <a href="https://arxiv.org/pdf/2607.17257">paper</a> / <a href="https://lag-fusion.github.io/">project page</a>
                     <p></p>
                     <p>
-                      We propose a latency-aware guidance fusion framework for asynchronous multimodal diffusion policy composition. It allows modality-specific policies to operate at their native inference rates and contribute denoising guidance whenever available. To make asynchronous composition consistent, we derive a reference-frame rebasing rule for diffusion variables under relative action representations, enabling delayed guidance to be aligned before fusion.
+                      We propose MATE, a framework for asynchronous multi-rate diffusion policy composition that combines independently trained policies across modalities and viewpoints without joint retraining. Each policy operates at its native inference rate, reusing slower predictions while incorporating fresh guidance from faster policies. MATE aligns overlapping predictions in time and reference frame through diffusion-variable rebasing before fusing their denoising guidance. We demonstrate vision–force composition for contact-rich manipulation and global–wrist vision composition for occluded pick-and-place.
                     </p>
                   </td>
                 </tr>
