@@ -219,7 +219,8 @@ h2 {
   height: auto;
 }
 
-.teaching {
+.teaching,
+.academic-services {
   padding: 20px;
 }
 
@@ -240,6 +241,15 @@ h2 {
 
 .teaching-course span {
   white-space: nowrap;
+}
+
+.academic-services h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1rem;
+}
+
+.academic-services ul {
+  margin: 0;
 }
 
 @media (max-width: 600px) {
