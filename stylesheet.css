@@ -148,8 +148,12 @@ h2 {
   padding: 0;
 }
 
+#recent-news {
+  margin-bottom: 0.5em;
+}
+
 #older-news {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 #older-news summary {
@@ -220,16 +224,21 @@ h2 {
 }
 
 .teaching,
-.academic-services {
+.academic-services,
+.experience {
   padding: 20px;
 }
 
-.teaching-list {
+.teaching-list,
+.experience-list {
   display: grid;
-  gap: 0.75rem;
   margin: 0.75rem 0 0;
   padding: 0;
   list-style: none;
+}
+
+.teaching-list {
+  gap: 0.75rem;
 }
 
 .teaching-course {
@@ -250,6 +259,37 @@ h2 {
 
 .academic-services ul {
   margin: 0;
+}
+
+.experience-list {
+  gap: 1.5rem;
+}
+
+.experience-list li {
+  display: grid;
+  grid-template-columns: clamp(4.5rem, 20vw, 8.25rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.75rem, 4vw, 2.5rem);
+}
+
+.experience-logo {
+  display: block;
+  width: 100%;
+  height: clamp(3.5rem, 16vw, 5rem);
+  object-fit: contain;
+}
+
+.experience-list h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.experience-list p {
+  margin: 0.15rem 0 0;
+}
+
+.experience-meta {
+  color: #595959;
 }
 
 @media (max-width: 600px) {
